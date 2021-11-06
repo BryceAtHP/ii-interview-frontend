@@ -1,0 +1,15 @@
+FROM node:14
+
+RUN apt-get update -qq
+
+RUN npm install -g npm
+
+RUN npm install -g create-react-app
+
+WORKDIR /app
+
+ENV PATH /app/node_modules/.bin:$PATH
+
+USER node
+
+CMD ["bin", "bash"]
